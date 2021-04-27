@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node dist/jwt-auth-boilerplate/server/main.js",
-    "build": "ng build",
+    "start": "npm run server:ssr",
+    "build": "npm run build:ssr",
     "dev:ssr": "ng run jwt-auth-boilerplate:serve-ssr",
     "serve:ssr": "node dist/jwt-auth-boilerplate/server/main.js",
     "build:ssr": "ng build --prod && ng run jwt-auth-boilerplate:server:production",
