@@ -1,1 +1,32 @@
-<h1 style="font-family: sans-serif;">Hello World</h1>
+<section>
+	<h1>Angular JWT</h1>
+	<button (click)="isLogin = !isLogin">Switch login register</button>
+
+	<div *ngIf="auth.isLoggedIn$ | async">
+		<h1>You are logged In</h1>
+		<a routerLink="/user/panesarpbx8">protected route</a>
+	</div>
+	
+	<div *ngIf="isLogin; else register">
+		<h1>Login</h1>
+		<label>Enter username</label> <br>
+		<input type="text" name="username" placeholder="username"> <br>
+		<label>Enter password</label> <br>
+		<input type="password" name="password" placeholder="password"> <br>
+		<button (click)="auth.login({ username: 'panesarpbx8', password: 'Panesar1810' })">Login</button>
+	</div>
+	
+	<ng-template #register>
+		<h1>Register</h1>
+		<label>Enter username</label> <br>
+		<input type="text" name="username" placeholder="username"> <br>
+		<label>Enter password</label> <br>
+		<input type="password" name="password" placeholder="password"> <br>
+		<button (click)="auth.register({ username: 'panesarpbx8', password: 'Panesar1810' })">register</button>
+	</ng-template>
+
+	<div>
+		<button (click)="auth.logout()">Logout</button>
+	</div>
+	
+</section>

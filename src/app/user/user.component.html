@@ -1,0 +1,6 @@
+<section *ngIf="auth.isLoggedIn$ | async">
+	<h1>Secret Data</h1>
+	<div *ngIf="user$ | async as user">
+		<p>{{ user.username }}</p>
+	</div>
+</section>
